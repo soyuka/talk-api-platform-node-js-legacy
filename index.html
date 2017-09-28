@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CLEAN MARKUP = GOOD KARMA.
+      Hi source code lover,
+
+      you're a curious person and a fast learner ;)
+      Let's make something beautiful together. Contribute on Github:
+      https://github.com/webslides/webslides
+
+      Thanks,
+      @jlantunez.
+    -->
+
+    <!-- SEO -->
+    <title>Feedback - Importing data from a legacy database to an api</title>
+    <meta name="description" content="Feedback - Importing data from a legacy database to an api">
+
+    <!-- URL CANONICAL -->
+    <!-- <link rel="canonical" href="http://your-url.com/"> -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS WebSlides -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/svg-icons.css">
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/prism.css">
+
+    <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+
+    <!-- FACEBOOK -->
+    <meta property="og:url" content="http://your-url.com/"> <!-- YOUR URL -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="WebSlides — Making HTML Presentations Easy"> <!-- EDIT -->
+    <meta property="og:description" content="WebSlides is about telling stories beautifully. Just the essential features. Good karma."> <!-- EDIT -->
+    <meta property="og:updated_time" content="2017-01-04T17:20:50"> <!-- EDIT -->
+    <meta property="og:image" content="static/images/share-webslides.jpg"> <!-- EDIT -->
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webslides"> <!-- EDIT -->
+    <meta name="twitter:creator" content="@jlantunez"> <!-- EDIT -->
+    <meta name="twitter:title" content="WebSlides — Making HTML Presentations Easy"> <!-- EDIT -->
+    <meta name="twitter:description" content="WebSlides is about good karma. Just essential features. 120+ free slides ready to use."> <!-- EDIT -->
+    <meta name="twitter:image" content="static/images/share-webslides.jpg"> <!-- EDIT -->
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="static/images/favicons/favicon-192.png">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+
+    <style type="text/css">
+      /* pre[class*="language-"] {background: #111; padding: 1.4rem; line-height: 1.4rem; color: #f6f6f6;} */
+      pre[class*="language-"] {padding: 0;line-height: 1;overflow: hidden;padding-top: 10px;}
+
+			#matrix {
+				-webkit-transform: rotateY(180deg);
+				transform: rotateY(180deg);
+				max-width: 100%;
+			}
+
+      .number {
+        max-width: auto;
+        padding: 0;
+        display: inline !important;
+      }
+
+      .steps li li {
+        background-color: #e8eef7 !important;
+      }
+
+      .steps li:nth-child(2) li {
+        background-color: #dde5f3 !important;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <header role="banner">
+      <nav role="navigation">
+        <p class="logo"><a href="index.html" title="Feedback - Importing data from a legacy database to an API">Feedback - Importing data from a legacy database to an API</a></p>
+        <ul>
+          <li class="github">
+            <a rel="external" href="https://github.com/soyuka" title="Github">
+              <svg class="fa-github">
+                <use xlink:href="#fa-github"></use>
+              </svg>
+              <em>Soyuka</em>
+            </a>
+          </li>
+          <li class="twitter">
+            <a rel="external" href="https://twitter.com/s0yuka" title="Twitter">
+              <svg class="fa-twitter">
+                <use xlink:href="#fa-twitter"></use>
+              </svg>
+              <em>@s0yuka</em>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main role="main">
+      <article id="webslides" class="vertical">
+        <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+        <section>
+         <span class="background" style="background-color: #bee8ec;"></span>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap aligncenter">
+            <h1 class="text-landing">Feedback</h1>
+            <p class="text-intro"><strong>Importing data from a legacy database to an API</strong></p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <span class="background-right-center" style="background-image: url('/static/images/fullstack.jpg');background-position: 174%;"></span>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div>
+              <h2>soyuka - Antoine Bluchet</h2>
+              <a href="https://keybase.io/soyuka" class="text-subtitle">https://keybase.io/soyuka</a>
+            </div>
+            <ul class="flexblock activity">
+              <li>
+                <div>
+                  <p class="title">Open source</p>
+                  <p class="summary">
+                    PM2 (nodejs)<br>
+                    api-platform<br>
+                    my own modules (dpicker, rxrest, relieve, pidusage...)<br>
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p class="title">Skills</p>
+                  <p class="summary">
+                    PHP (+10 years)<br>
+                    nodejs (+4 years)<br>
+                    javascript (+6 years)<br>
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="aligncenter">
+          <div class="wrap">
+            <h2><strong>Ds-Restauration</strong></h2>
+            <br><br><br>
+            <div class="grid">
+              <div class="column">
+                <ul class="flexblock metrics">
+                  <li>
+                    Founded
+                    <span>1968</span>
+                  </li>
+                  <li>
+                    <span>660 </span>
+                    Employees
+                  </li>
+                  <li>
+                    <span>160</span>
+                    Trucks
+                  </li>
+                  <li>
+                    <span>30,000</span>
+                    Customers
+                  </li>
+                  <li>
+                    <span>4,000 / day</span>
+                    Orders (x2, x3 on christmas)
+                  </li>
+                  <li>
+                    <span>
+                      2500
+                    </span>
+                    Products
+                  </li>
+                </ul>
+              </div>
+              <div class="column">
+                <img class="aligncenter size-50" src="/static/images/carte_claire_fresca_2017.jpeg" alt="Carte ds-restauration 2017">
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!-- .end .wrap -->
+        </section>
+
+
+        <section class="aligncenter">
+          <div class="wrap">
+            <h2>Legacy?</h2>
+            <p class="text-intro">The current state of our legacy application.</p>
+            <figure>
+              <img alt="legacy app" src="/static/images/generix.png">
+            </figure>
+          </div>
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <div class="content-center">
+              <h2>Legacy data?</h2>
+              <br>
+              <pre>
+                <code class="language-sql">
+                  SELECT * FROM PRO WHERE CODPRO = '00001';
+                </code>
+              </pre>
+            </div>
+            <img alt="legacy data" class="aligncenter" src="/static/images/select-db-annotated.jpg">
+          </div>
+        </section>
+
+        <section class="aligncenter">
+          <span class="background" style="background-image: url('/static/images/gif-wtf.gif')"></span>
+        </section>
+
+        <section class="aligncenter">
+          <div class="wrap">
+            <h2>Internal development team</h2>
+            <div class="grid">
+              <div class="column">
+                <figure>
+                  <img src="/static/images/gif-bullshit.gif" alt="bullshit">
+                </figure>
+              </div>
+              <div class="column">
+                <ul class="flexblock specs" style="font-size: 1.2em;">
+                  <li>Good understanding of the company needs</li>
+                  <li>Database model close to the business</li>
+                  <li>Close to the end users</li>
+                  <li>Fast bug resolutions</li>
+                  <li>Build Features that matters</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="grid">
+            <div class="column">
+              <h2 style="margin-bottom: 50px;">API Platform FTW</h2>
+              <blockquote class="text-quote flex-content">
+                <p>"We've started to use it for migrating our monolithic app to separated UI's. Massively reduced our dev time so far. Really impressed</p>
+                <p><cite> <a href="http://twitter.com/ppounder/"> @ppounder</a></cite></p>
+              </blockquote>
+            </div>
+            <div class="column">
+              <figure>
+                <img class="aligncenter size-40" src="/static/images/api-platform-expose.png" alt="Logo api platform">
+              </figure>
+            </div>
+          </div>
+          <hr>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="aligncenter" style="padding-top: 15px;">
+          <div class="wrap">
+            <pre>
+              <code class="language-php">
+              /**
+              * @ApiResource
+              * @ORM\Entity
+              * @ORM\Table(uniqueConstraints={@ORM\UniqueConstraint(name="Codeidx", columns={"code"})})
+              */
+              class Product
+              {
+                  use Timestampable;
+                  use Blameable;
+
+                  /**
+                  * @ORM\Id
+                  * @ORM\Column(type="integer", name="id")
+                  * @ORM\GeneratedValue(strategy="AUTO")
+                  */
+                  private $id;
+
+                  /**
+                  * @ORM\Column(type="string", nullable=false, name="code")
+                  * @ApiFilter(SearchFilter::class, strategy="exact")
+                  */
+                  public $code;
+
+                  /**
+                  * @ORM\ManyToOne(targetEntity="Product\ProductBundle\Entity\Category")
+                  * @ORM\JoinColumn(name="category_id", referencedColumnName="id", nullable=false)
+                  */
+                  public $category;
+
+                  //...
+              }
+              </code>
+            </pre>
+          </div>
+        </section>
+
+        <section class="aligncenter">
+          <canvas class="background" id="matrix"></canvas>
+          <div class="wrap">
+            <h2 class="text-data" style="color: #f6f6f6;">What about data?</h2>
+          </div>
+        </section>
+
+        <section class="aligncenter">
+          <div class="wrap">
+            <h2>The first issue about legacy data is to find a unique identifier.</h2>
+            <br>
+            <br>
+            <figure>
+              <img src="/static/images/gif-find-identifier.gif">
+            </figure>
+          </div>
+        </section>
+
+        <section class="aligncenter">
+          <div class="wrap">
+            <h2>$identity</h2>
+            <figure>
+              <img src="/static/images/select-db-identity.jpg">
+            </figure>
+            <p>
+              Later, those will be mentioned as `$identity`, each belonging to a `$resource`.
+            </p>
+          </div>
+        </section>
+
+        <section class="aligncenter" style="padding: 0;">
+          <div class="wrap">
+            <h2>$resource</h2>
+            <figure>
+              <img src="/static/images/annotated_product.jpg">
+            </figure>
+          </div>
+        </section>
+
+
+        <section class="aligncenter">
+          <div class="wrap">
+            <h2>And now, how do we transfer the data?</h2>
+            <br>
+            <br>
+            <figure>
+              <img src="/static/images/fry-hmm.gif">
+            </figure>
+          </div>
+        </section>
+
+        <section class="aligncenter bg-light">
+          <span class="background light" style="background-image:url('/static/images/seed-system.png');"></span>
+          <div class="wrap bg-light">
+            <h2>Research (part 1)</h2>
+            <p class="text-intro">A seed system - <a href="https://github.com/soyuka/SeedBundle">SoyukaSeedBundle</a></p>
+            <ul class="flexblock steps">
+              <li>
+                <h2>Two steps</h2>
+                <ul>
+                  <li>1. Read from the legacy database</li>
+                  <li>2. Write to the new database (via Doctrine)</li>
+                </ul>
+              </li>
+              <li>
+                <h2>Observation</h2>
+                <ul>
+                  <li>- Lot of code to write</li>
+                  <li>- Hard to maintain between php, sql etc.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="aligncenter">
+          <div class="wrap">
+            <h2>Research (part 2)</h2>
+            <p class="text-intro">KISS - use JSON files</p>
+            <div class="grid">
+              <div class="column">
+                <ul class="flexblock specs" style="font-size: 1.2em;">
+                  <li>
+                    1. Read data from the legacy database
+                  </li>
+                  <li>
+                    2. Write the data in JSON files
+                  </li>
+                  <li>
+                    3. Send the JSON data to the API via POST requests
+                  </li>
+                </ul>
+              </div>
+              <div class="column">
+                <figure>
+                  <img class="size-50" src="/static/images/api-platform-schema.png" alt="api-platform logo">
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section style="background-color: #333;">
+          <div class="grid vertical-align" style="text-align: center;">
+            <div class="column">
+              <h1 style="color: #f6f6f6;"><strong>When</strong></h1>
+              <br>
+              <figure>
+                <img src="/static/images/nodejs.svg" class="size-50">
+              </figure>
+            </div>
+            <div class="column" style="text-align: center;">
+              <h1 style="color: #f6f6f6;"><Strong>Meets</strong></h1>
+              <br>
+              <figure>
+                <img src="/static/images/logo-api-platform.png" class="size-30">
+              </figure>
+            </div>
+            <hr>
+          </div>
+        </section>
+
+        <section>
+          <span class="background" style="background-image:url('/static/images/read.jpg');"></span>
+          <div class="wrap">
+            <h1 style="color: #f6f6f6;"><strong>1. Export data from the legacy database</strong></h1>
+          </div>
+        </section>
+
+        <section>
+          <div class="wrap">
+            <h3>Read data from the database and write it in a json file:</h3>
+            <pre>
+              <code class="language-javascript">
+                const JSONStream = require('JSONStream')
+                const pump = require('pump')
+
+                const readable = connection.queryStream('SELECT category FROM PRO')
+                const writeable = require('fs').createWriteStream('product_products.json')
+
+                pump(readable, transformData(), JSONStream.stringify(), writeable, function(err) {})
+              </code>
+            </pre>
+          </div>
+        </section>
+
+        <section>
+          <div class="wrap">
+            <h3>The function "transformData" uses the following mapping:</h3>
+            <pre>
+              <code class="language-javascript">
+                module.exports = {
+                  table: 'PRO',
+                  where: `TYPPRO IN('FRS', 'SUR')`,
+                  mapping: {
+                    name: 'NOMPRO',
+                    code: 'CODE',
+                    $identity: (data) => { return  {code: data.CODE}},
+                    category: (data) => { return {$identity: {slug: data.TYPPRO}, $resource: 'product_categories'} }
+                  }
+                }
+              </code>
+            </pre>
+            <p class="text-context">/mapping/products/product_products.js</p>
+          </div>
+        </section>
+
+        <section>
+          <div class="wrap">
+            <h3>Which resolves in this output:</h3>
+            <pre>
+              <code class="language-json">
+              [
+                {
+                  "code": "00001",
+                  "name": "LANGUE BOEUF PREC. AMS 4/900G",
+                  "$identity": {"code": "00001"},
+                  "category": {"$identity": {"slug": "SUR"}, "$resource": "product_categories"}
+                },
+                {
+                  "code": "00010",
+                  "name": "STEAK HACHE CHARAL UE 15% 100G",
+                  "$identity": {"code": "00010"},
+                  "category": {"$identity": {"slug": "SUR"}, "$resource": "product_categories"}
+                }
+              ]
+              </code>
+            </pre>
+            <p class="text-context">/data/products/product_products.json</p>
+          </div>
+        </section>
+
+        <section>
+          <pre>
+            <code>
+				▾ mapping/
+					▾ Product/
+						▾ ProductBundle/
+								product_marketing_families.js
+								product_packaging_wrap_labels.js
+								product_portion_labels.js
+								product_product_internal_organizations.js
+								product_product_to_packagings.js
+								product_product_to_technical_sheets.js
+								product_products.js
+								product_quality_labels.js
+								product_referencings.js
+				▾ data/
+					▾ Product/
+						▾ ProductBundle/
+								product_marketing_families.json
+								product_packaging_wrap_labels.json
+								product_portion_labels.json
+								product_product_internal_organizations.json
+								product_product_to_packagings.json
+								product_product_to_technical_sheets.json
+								product_products.json
+								product_quality_labels.json
+								product_referencings.json
+            </code>
+					</pre>
+        </section>
+
+        <section>
+          <span class="background" style="background-image:url('/static/images/write.jpg');"></span>
+          <div class="wrap">
+            <h1 style="color:#f6f6f6;"><strong>2. Import the data back through the API</strong></h1>
+          </div>
+        </section>
+
+        <section>
+          <div class="wrap">
+            <h2>Find existing data or relations from the API</h2>
+            <pre>
+              <code class="language-javascript">
+                function findOne ($resource, $identity) {
+                  return rxrest.all($resource)
+                  .get($identity)
+                  .observe(() => {})
+                  .then((data) => {
+                    const l = data.length
+
+                    if (l === 0) {
+                      return null
+                    }
+
+                    if (l > 1) {
+                      return Promise.reject(new ReferenceError(`Whoops too many data found on ${$resource} with identity ${JSON.stringify($identity)} (${l} lines)`))
+                    }
+
+                    return data[0]
+                  })
+                }
+              </code>
+            </pre>
+            <p>
+            For example, the previous `category` will request `GET /api/product_categories?slug=FRS` to get the correct identifer for the category relation
+            </p>
+            <p class="alignright"><a href="https://github.com/soyuka/rxrest">rxrest on github</a></p>
+          </div>
+        </section>
+
+        <section>
+          <div class="wrap">
+            <h3>Send data via `POST` requests</h3>
+            <pre>
+              <code class="language-javascript">
+              return bluebird.props({
+                // check if the line exists
+                existing: findOne($resource, line.$identity),
+                // calls findOne when $identity and $resource fields are present
+                line: computeRelations(line)
+              })
+              .then((lineProps) => {
+                if (lineProps.existing !== null) {
+                  console.log('%s already has an entry for %j', $resource, line)
+                  return Promise.resolve()
+                }
+
+                line = lineProps.line
+
+                delete line.$identity // remove metadata
+
+                console.log('Creating new %s with data %j', $resource, line)
+                return rxrest.all($resource).post(line).observe(() => {})
+              })
+              </code>
+            </pre>
+            <p>
+              This is executed over an asynchronous loop on every item (`line`) of the JSON collection
+            </p>
+          </div>
+        </section>
+
+        <section class="aligncenter">
+          <span class="background" style="background-image:url('/static/images/gif-data-insert.gif');"></span>
+          <div class="wrap bg-light">
+            <div class="grid">
+              <div class="column">
+                <h2>Drawback</h2>
+                <ul class="flexblock specs">
+                  <li>Theoretically slower then SQL => SQL. However not that slower compared to the seed bundle.</li>
+                  <li>Managing relations can be complicated (resolved in a 2-pass flow)</li>
+                </ul>
+              </div>
+              <div class="column">
+                <h2>Benefit</h2>
+                <ul class="flexblock specs">
+                  <li>Tests your API, routes and "serialization" groups</li>
+                  <li>Gives a look on your API performances under heavy load</li>
+                  <li>API validation rules will apply (less data integrity errors)</li>
+                  <li>Files allows easier debugging and can be re-used</li>
+                  <li>No code to write (whole integration system is &lt; 400 lines)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="aligncenter bg-black">
+          <div class="wrap">
+            <h1><strong>Thanks</strong></h1>
+            <div class="grid">
+              <div class="column">
+                <h2>Paris API</h2>
+                <img src="/static/images/logo-tilleuls.png" class="size-40" alt="coop tilleuls">
+                <img src="/static/images/logo-redesign.svg" style="height:100px;" alt="coop tilleuls">
+              </div>
+              <div class="column">
+                <img src="/static/images/api-platform-github.png" class="size-90" alt="github api-platform contributors">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-black">
+          <span class="background light" style="background-image:url('/static/images/questions.png');"></span>
+          <div class="wrap">
+            <h1><strong>Questions?</strong></h1>
+          </div>
+        </section>
+
+        <section class="aligncenter">
+          <div class="wrap">
+            <img src="/static/images/bender-applause.jpg" alt="applause">
+          </div>
+        </section>
+
+      </article>
+      <!-- end article -->
+    </main>
+    <!-- end main -->
+
+   <!-- A global footer
+
+     <footer role="contentinfo">
+      <div class="wrap">
+        <p>An <a href="https://github.com/webslides/webslides">open source solution</a>, by <a href="https://twitter.com/webslides">@webslides</a>.</p>
+      </div>
+    </footer>  -->
+
+    <!-- Required -->
+    <script src="static/js/webslides.js"></script>
+    <script>
+      window.ws = new WebSlides();
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="static/js/svg-icons.js"></script>
+    <script defer src="static/js/prism.js"></script>
+		<script type="text/javascript">
+      //https://codepen.io/asalov/pen/GJowqM?q=matrix&limit=all&type=type-pens
+			var canvas = document.getElementById('matrix');
+			var ctx = canvas.getContext('2d');
+			var fontSize = 18;
+			var chars = generateChars();
+			var columns;
+			var drops; // Current position of last letter (for each column)
+			var drawnToBottom;
+
+			// Generate Matrix code characters
+			function generateChars() {
+				var chars = '0123456789';
+
+				// Get ALL half-width katakana characters by unicode value
+				for (var i = 0; i <= 55; i++) {
+					chars += String.fromCharCode(i + 65382);
+				}
+
+				return chars.split('');
+			}
+
+			// Initialize default canvas state
+			function initCanvas() {
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
+
+				columns = Math.round(canvas.width / fontSize);
+				drops = [];
+
+				// Set initial position on y coordinate for each column
+				for (var i = 0; i < columns; i++) {
+					drops[i] = 1;
+				}
+
+				drawnToBottom = false;
+			}
+
+			// Resize canvas to fit window
+			window.onresize = function() {
+				initCanvas();
+			};
+
+			function draw() {
+				// Set nearly transparent background so character trail is visible
+				ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+				ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+				// Set color and font of falling letters
+				ctx.fillStyle = '#19FF19';
+				ctx.font = 'bold ' + fontSize + 'px monospace';
+
+				var dropCount = drops.length;
+				var charCount = chars.length;
+
+				for (var i = 0; i < dropCount; i++) {
+					// Choose a random letter
+					var text = chars[Math.floor(Math.random() * charCount)];
+					// Get the y position of the letter
+					var rowNum = drops[i] * fontSize;
+					// Draw it!
+					ctx.fillText(text, i * fontSize, rowNum);
+
+					// Check if the canvas has been drawn to the bottom
+					if (rowNum > canvas.height) drawnToBottom = true;
+
+					// Randomly reset the y position of a column
+					if ((!drawnToBottom && Math.random() > 0.925) || (drawnToBottom && Math.random() > 0.95)) drops[i] = 0;
+
+					drops[i]++;
+				}
+			}
+
+			initCanvas();
+			setInterval(draw, 45);
+		</script>
+
+
+  </body>
+</html>
